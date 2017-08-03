@@ -71,6 +71,5 @@ function Tweet(user,pass,message){
 };
 
 
-
-Tweet(user,pass,targets);
+Tweet(user,pass,message);
 
