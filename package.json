@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/HansUXdev/twitter-scripting#readme",
   "dependencies": {
-    "nightmare": "^2.10.0"
+    "nightmare": "^2.10.0",
+    "nightmare-iframe": "^1.0.2",
+    "nightmare-iframe-manager": "github:rosshinkley/nightmare-iframe-manager"
   }
 }

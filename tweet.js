@@ -31,7 +31,7 @@ function Tweet(user,pass,message){
   .goto("https://twitter.com/")
   // Login
     // Click the login button
-    .wait(1000)
+    .wait(500)
     .click("a.js-login")
 
     // Click the user name button, then type the user name
