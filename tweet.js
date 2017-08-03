@@ -39,14 +39,14 @@ function Tweet(user,pass,message){
     .insert("input.js-signin-email", user)
 
     // Click the password name button, then type the password name
-    .wait(1000)
+    .wait(500)
     .insert("input[type=password][placeholder=Password]", pass)
     // Click the submit button to login
-    .wait(1000)
+    .wait(500)
     .click("input.submit.js-submit[type=submit]")
 
   // Send Tweet to the target
-    .wait(2000)
+    .wait(1000)
     .click(".js-global-new-tweet")
     .wait(2000)
     // name="tweet"
