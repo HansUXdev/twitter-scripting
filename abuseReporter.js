@@ -3,8 +3,6 @@ var Nightmare = require("nightmare");
 // var goto = require("nightmare").goto();
 require('nightmare-iframe-manager')(Nightmare);
 
-// var twitterSignIn = require("./twitterSignIn");
-
 // require your user and password
 // rename setting-example.js and add your user info
 var settings  = require('./settings.js');
@@ -29,9 +27,6 @@ var block = false;
 
 function Tweet(TW_USER, TW_PASS){
   nightmare
-
-  // call the twitterSignIn(user,pass)
-    // twitterSignIn(user,pass)
 
   // Sign in
   .goto('https://twitter.com/login/')

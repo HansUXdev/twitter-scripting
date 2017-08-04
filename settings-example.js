@@ -1,6 +1,13 @@
-var settings = {
-      user = "<YOUR_USERNAME>",
-      pass = "<YOUR_PASSWORD>"
-}
+var settings = [
+	{
+	      name = "<YOUR_USERNAME>",
+	      pass = "<YOUR_PASSWORD>"
+	},
+	{
+	      name = "<YOUR_USERNAME>",
+	      pass = "<YOUR_PASSWORD>"
+	}
+]
+
 
 module.exports = settings;

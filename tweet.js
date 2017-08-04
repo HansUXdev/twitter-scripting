@@ -7,58 +7,30 @@ var nightmare = Nightmare({
   pollInterval: 50
 });
 
-var user = "<YOUR_USERNAME>";
-var pass = "<YOUR_PASSWORD>";
-var targets = "@Breadstickguy ";
-var message = targets+"whats up?";
+var targets = "@robbatron ";
+var message = targets+"are you showing off #nightmareJS in class?";
 
-var users = [
-  {
-    name: "<YOUR_USERNAME>",
-    pass: "<YOUR_PASSWORD>",
-    message: "now to loop through the function..."
-  },
-  {
-    name: "<YOUR_USERNAME>",
-    pass: "<YOUR_PASSWORD>",
-    message: "second iteration..."
-  }
-];
+var settings  = require('./settings.js');
 
-function Tweet(user,pass,message){
+
+function Tweet(TW_USER,TW_PASS,message){
   nightmare
-  // Visit Home page
-  .goto("https://twitter.com/")
-  // Login
-    // Click the login button
-    .wait(500)
-    .click("a.js-login")
-
-    // Click the user name button, then type the user name
-    .wait(1000)
-    .insert("input.js-signin-email", user)
-
-    // Click the password name button, then type the password name
-    .wait(500)
-    .insert("input[type=password][placeholder=Password]", pass)
-    // Click the submit button to login
-    .wait(500)
-    .click("input.submit.js-submit[type=submit]")
-
-  // Send Tweet to the target
-    .wait(1000)
-    .click(".js-global-new-tweet")
-    .wait(2000)
-    // name="tweet"
-    .insert(".tweet-box ", message)
-    .wait(1000)
-
-  // click to send
-    .wait(2000)
+  //login
+  .goto('https://twitter.com/login/')
+    .insert('.js-username-field.email-input.js-initial-focus[name="session[username_or_email]"]', TW_USER)
+    .insert(".js-password-field[name='session[password]']", TW_PASS)
+    .click('#page-container > div > div.signin-wrapper > form > div.clearfix > button')
+  // open the tweet panel
+    .wait("#global-new-tweet-button")
+    .click("#global-new-tweet-button") 
+    // tweets "hello"
+    .wait("#tweet-box-global")
+    .type('#tweet-box-global', message)
+    // click to send
     .click("#global-tweet-dialog-dialog > div.modal-content > div.modal-tweet-form-container > form > div.TweetBoxToolbar > div.TweetBoxToolbar-tweetButton.tweet-button > button > span.button-text.tweeting-text")
-    .wait(1000)
 
 
+  .wait(5000)
   .end()
   // Execute commands
   .then(function () {
@@ -71,5 +43,5 @@ function Tweet(user,pass,message){
 };
 
 
-Tweet(user,pass,message);
+Tweet(settings[0].name,settings[0].pass,message);
 
