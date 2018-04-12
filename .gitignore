@@ -3,6 +3,7 @@ settings.js
 test.js
 twitterSignIn.js
 twitterReporter.js
+scripts/*
 
 #configs
 setting.js
